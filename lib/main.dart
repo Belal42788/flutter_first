@@ -1,5 +1,50 @@
 // ctrl + shift + P لانشاء مشروع جديد 
-//الكود الاساسي لاي برنامج
+// الكود الاساسي لاي برنامج مكون من صفحة واحدة
+
+
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// import 'package:flutter/material.dart';
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//      debugShowCheckedModeBanner: false,
+//       home: MyWidget(), 
+//     );
+//   }
+// }
+// class MyWidget extends StatelessWidget {
+//   const MyWidget({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//   SafeArea() داخل Scaffoldيبقا تحط ال appBarلو مش هتستخدم ال
+//     return Scaffold(
+//       appBar: ,
+//       body: ,
+//     );
+//   }
+// }
+
+
+
+
+
+
+
+// الكود الاساسي لأي برنامج مكون من عدة صفحات
+
+
+//او اي حاجة شبههم pages او screens او routes بنعمل مجلد اسمه
+//import ونعملهم class MyAppاللي في ال routesنضيف الصفحات كلهم في ال 
+// stateless widgetوبنعمل الصفحات اللي في البرنامج ب
+
 
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
@@ -19,36 +64,56 @@
 //     return MaterialApp(
 //      debugShowCheckedModeBanner: false,
 
-//لو صفحة واحدة
-//       home: MyWidget(), 
-
-
-// لو اكتر من صفحة
 //       الصفحة اللي هتظهر اول لما نفتح البرنامج
 //       initialRoute: '/',
+
+//       هنا هنكتب كل الصفحات اللي عندنا في البرنامج بتاعنا
 //       routes: {
 //         '/': (context) => const Welcome(),
 //         '/login': (context) => const Login(),
 //         '/signup': (context) => const Signup(),
 //       },
-
-
-
 //     );
 //   }
 // }
-// class MyWidget extends StatelessWidget {
-//   const MyWidget({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//   SafeArea() داخل Scaffoldيبقا تحط ال appBarلو مش هتستخدم ال
-//     return Scaffold(
-//       appBar: ,
-//       body: ,
-//     );
-//   }
-// }
+/*
+مثال لصفحة عندنا
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+class Signup extends StatelessWidget {
+  const Signup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold()
+    );
+  }
+}
+*/
+
+/*
+علشان اتنقل بين الصفحات بحط ده في اي زرار
+onPressed: () {
+  // Navigate to the second screen using a named route.
+  Navigator.pushNamed(context, '/page');
+}
+
+
+وعلشان ارجع للصفحة اللي قبلها
+onPressed: () {
+  // Navigate back to the first screen by popping the current route
+  // off the stack.
+  Navigator.pop(context);
+}
+*/
+
+
+
+
 
 
 
