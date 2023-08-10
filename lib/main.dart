@@ -1,6 +1,5 @@
-// ctrl + shift + P لانشاء مشروع جديد 
+// ctrl + shift + P لانشاء مشروع جديد
 // الكود الاساسي لاي برنامج مكون من صفحة واحدة
-
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 // import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
 //      debugShowCheckedModeBanner: false,
-//       home: MyWidget(), 
+//       home: MyWidget(),
 //     );
 //   }
 // }
@@ -32,20 +31,11 @@
 //   }
 // }
 
-
-
-
-
-
-
 // الكود الاساسي لأي برنامج مكون من عدة صفحات
 
-
 //او اي حاجة شبههم pages او screens او routes بنعمل مجلد اسمه
-//import ونعملهم class MyAppاللي في ال routesنضيف الصفحات كلهم في ال 
+//import ونعملهم class MyAppاللي في ال routesنضيف الصفحات كلهم في ال
 // stateless widgetوبنعمل الصفحات اللي في البرنامج ب
-
-
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 // import 'package:flutter/material.dart';
@@ -111,415 +101,245 @@ onPressed: () {
 }
 */
 
+//الشرح من اول هنا
 
-
-
-
-
-
-//My ID Card Project
-// import 'package:flutter/material.dart';
-
+// بالشكل ده ونكتب كل حاجة جواها او بالطريقة اللي فوق  main function ممكن نعمل ال
 // void main() {
-//   runApp(const MyIdCard());
+//   runApp(
+//     MaterialApp(
+//       home: Scaffold(),
+//     ),
+//   );
 // }
 
-// class MyIdCard extends StatelessWidget {
-//   const MyIdCard({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: MyWidget(),
-//     );
-//   }
-// }
-
-// class MyWidget extends StatelessWidget {
-//   const MyWidget({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Colors.grey[800],
-//           centerTitle: true,
-//           title: Text(
-//             "My ID Card",
-//             style: TextStyle(
-//               color: Colors.grey[300],
-//             ),
-//           )),
-//           body:
-          
-//           Container(
-//             color: Colors.grey[850],
-//             padding: EdgeInsets.only(top: 40),
-//             width: double.infinity,
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               children: [
-//                 CircleAvatar(
-//                   radius: 55,
-//                   backgroundImage: AssetImage("assets/imgs/bll.jpg"),
-//                 ),
-//                 SizedBox(height: 70,),
-//                 Container(
-//                   padding: EdgeInsets.only(left: 27),
-//                   height: 180,
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-//                     children: [
-//                       Text("Name",style: TextStyle(color: Colors.grey[500],fontSize: 20),),
-//                       Text("Bilal Abd Elnaseer Abd Elfattah",style: TextStyle(color: Colors.amberAccent,fontSize: 24,fontFamily: "RobotoCondensed"),),
-//                       SizedBox( height: 10, ),
-//                       Text("Level",style: TextStyle(color: Colors.grey[500],fontSize: 20),),
-//                       Text("Senior",style: TextStyle(color: Colors.amberAccent,fontSize: 24,fontFamily: "RobotoCondensed"),),
-//                       SizedBox( height: 10, ),
-//                       Row(
-//                         children: [
-//                           Icon(
-//                             color: Colors.grey[500],
-//                             Icons.email
-//                           ),
-//                           SizedBox( width: 10, ),
-//                           Text("Belal4278@gmail.com",style: TextStyle(color: Colors.grey,fontSize: 24,fontFamily: "RobotoCondensed"),),
-//                         ],
-//                       )
-//                     ],
-//                   ),
-//                 )
-              
-//               ],
-//             ),
-//           ),
-//     );
-//   }
-// }
-
-
-
-
-//Login Screen
-
-//ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'dart:math';
 
 import 'package:flutter/material.dart';
+//ثوابت بالشكل ده MyAppوال mainال
+
 void main() {
-  runApp(const LoginScreen());
+  runApp(const MyApp());
 }
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // الاساسي بتاع البرنامج (Widet) Classالكبيرة واللي بيكون ادخلها ال Widgetال
     return const MaterialApp(
-    debugShowCheckedModeBanner: false,
-      home: MyWidget(),
+      home: MyWidget(), //الاساسي بتاع البرنامج (Widet) Classال
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-class MyWidget extends StatelessWidget {
+
+class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
 
   @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  @override
+  var x = 0;
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: 
-        AppBar(title: Text("Login"),centerTitle: true,backgroundColor: Colors.purple),
-      body: 
-        Container(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 4),
-                decoration: 
-                  BoxDecoration(
-                    color: Colors.purple[200],
-                    borderRadius: BorderRadius.circular(30)
-                  ),
-                width: 266,
-                child: 
-                  TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Email :",
-                      prefixIcon: Icon(Icons.person,color: Colors.purple[800],)
-                    ),
-                  ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 4),
-                decoration: 
-                  BoxDecoration(
-                    color: Colors.purple[200],
-                    borderRadius: BorderRadius.circular(30)
-                  ),
-                width: 266,
-                margin: EdgeInsets.symmetric(vertical: 22),
-                child: 
-                  TextField(
-                  textInputAction: TextInputAction.done,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Password :",
-                      prefixIcon: Icon(Icons.lock,color: Colors.purple[800],),
-                      suffixIcon: Icon(Icons.visibility,color: Colors.purple[800],),
-                    ),
-                  ),
-              ),
-              Container(
-                width: 244,
-                child: ElevatedButton(
-                  onPressed: (){},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.purple[500]),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(12)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
-                  ),
-                  child: Text("Login", style: TextStyle(fontSize: 19),),
-                ),
-              )
-            ],
-          ),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            x=Random().nextInt(10000);
+          });
+        },
+        child: Text("$x"),
+      ),
     );
   }
 }
+//بتاعنا Appبتعبر عن اسم ال classهنا اسم ال
+//StatefullWidget او StatelessWidget لازم الشيء اللي اتغير يكون داخل Hot reload علشان استخدم ال
+//refresh لازم Hot reload مقدرش اعمل refresh في البرنامج عندي وعاوز اعملها function لو في
+/*
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    //camel case بتبدأ بحرف كابيتل وبعدها widget() اي
+    //List of Widgets واحدة الا بعضهم يحتووا على Wedgit وفي العادة تحتوى على
 
+    //MaterialApp الكبيرة واللي اسمها Widgetالاساسية اللي بتحتوي على كل حاجة اللي بتكون داخل ال Widgetال
+    return Scaffold(
+        //properities ليها Widget اي
+        //Camle Case وبعدها small بتبدأ بحرف properity اي
 
-// import 'package:flutter/material.dart';
+        appBar: // => appBarالمكان العلوي من الشاشة اسمه ال
+            //AppBar Widget حطلي appBarفي المكان بتاع ال
+            AppBar(
+          // leading | title | actions[widget,widget,....]
 
-// void main() {
-//   runApp(const MyApp());
-// }
+          //واحدة فقط Widget ويحتوي على AppBarالجزء اليسار من ال
+          leading:
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
+              //IconButton() لكن اقدر لما اضغط عليها يحصل حاجة معينة icon لو عاوز احط
+              IconButton(
+            //اللي المفروض يحصل لما ادوس عليها actionال
+            onPressed: () {},
 
-//   @override
-//   Widget build(BuildContext context) {
-//     // الاساسي بتاع البرنامج (Widet) Classالكبيرة واللي بيكون ادخلها ال Widgetال
-//     return const MaterialApp(
-//       home: FavebookApp(), //الاساسي بتاع البرنامج (Widet) Classال
-//       debugShowCheckedModeBanner: false,
-//     );
-//   }
-// }
-// //ثوابت بالشكل ده MyAppوال mainال
+            //IconButtonاللي هحطها داخل ال iconال
+            icon: Icon(
+              //Icons.menu => iconعلشان اختار شكل ال
+              Icons.menu,
+              color: Colors.blue,
+            ),
+          ),
 
-// //بتاعنا Appبتعبر عن اسم ال classهنا اسم ال
-// class FavebookApp extends StatelessWidget {
-//   const FavebookApp({super.key});
+          //اللي بنحط فيها كلام widgetال
+          title: Text(
+            //contentال
+            'facebook',
+            //contentبتاع ال styleال
+            style: TextStyle(
+              color: Colors.blue,
 
-//   @override
-//   Widget build(BuildContext context) {
-//     //camel case بتبدأ بحرف كابيتل وبعدها widget() اي
-//     //List of Widgets واحدة الا بعضهم يحتووا على Wedgit وفي العادة تحتوى على
+              //bold علشان نخليه
+              fontWeight: FontWeight.bold,
+            ),
+          ),
 
-//     //MaterialApp الكبيرة واللي اسمها Widgetالاساسية اللي بتحتوي على كل حاجة اللي بتكون داخل ال Widgetال
-//     return Scaffold(
-//         //properities ليها Widget اي
-//         //Camle Case وبعدها small بتبدأ بحرف properity اي
+          //يكون في المنتصف titleال
+          centerTitle: true,
 
-//         appBar: AppBar(
-//           // leading | title | actions[widget,widget,....]
+          //AppBarالجزء اليمين من ال
+          //[widget,widget,....] list of widgets ويحتوي على
+          actions: [
+            //1
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+              color: Colors.blue,
+            ),
 
-//           //واحدة فقط Widget ويحتوي على AppBarالجزء اليسار من ال
-//           leading:
+            //2
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.message),
+              color: Colors.blue,
+            ),
+          ],
 
-//               //IconButton() لكن اقدر لما اضغط عليها يحصل حاجة معينة icon لو عاوز احط
-//               IconButton(
-//             //اللي المفروض يحصل لما ادوس عليها actionال
-//             onPressed: () {},
+          //Colors.blue[وهنا بنكتب رقم من 100:900 بيعبر عن مدى غمقان اللون] بيتكتب بالشكل ده colorال
+          backgroundColor: Colors.white,
 
-//             //IconButtonاللي هحطها داخل ال iconال
-//             icon: Icon(
-//               //Icons.menu => iconعلشان اختار شكل ال
-//               Icons.menu,
-//               color: Colors.blue,
-//             ),
-//           ),
+          //معناها الصعود وعلشان نعمل ظل تحت حاجة لازم نصعد elevation
+          elevation: 10,
+        ),
 
-//           //اللي بنحط فيها كلام widgetال
-//           title: Text(
-//             //contentال
-//             'facebook',
-//             //contentبتاع ال styleال
-//             style: TextStyle(
-//               color: Colors.blue,
-
-//               //bold علشان نخليه
-//               fontWeight: FontWeight.bold,
-//             ),
-//           ),
-
-//           //يكون في المنتصف titleال
-//           centerTitle: true,
-
-//           //AppBarالجزء اليمين من ال
-//           //[widget,widget,....] list of widgets ويحتوي على
-//           actions: [
-//             //1
-//             IconButton(
-//               onPressed: () {},
-//               icon: Icon(Icons.search),
-//               color: Colors.blue,
-//             ),
-
-//             //2
-//             IconButton(
-//               onPressed: () {},
-//               icon: Icon(Icons.message),
-//               color: Colors.blue,
-//             ),
-//           ],
-
-//           //Colors.blue[وهنا بنكتب رقم من 100:900 بيعبر عن مدى غمقان اللون] بيتكتب بالشكل ده colorال
-//           backgroundColor: Colors.white,
-
-//           //معناها الصعود وعلشان نعمل ظل تحت حاجة لازم نصعد elevation
-//           elevation: 10,
-//         ),
-
-//         //علشان اعمل زر عائم
-//         floatingActionButton: FloatingActionButton(
-//           onPressed: () {},
-//           child: IconButton(
-//             onPressed: () {},
-//             icon: Icon(Icons.add),
-//           ),
-//         ),
-//         body: SingleChildScrollView(
-//           scrollDirection: Axis.vertical,
-//           child: Column(
-//             // mainAxisAlignment: MainAxisAlignment.end,
-//             crossAxisAlignment: CrossAxisAlignment.stretch,
-//             children: [
-//               Container(
-//                 alignment: Alignment.center,
-//                 height: 200,
-//                 width: 100,
-//                 // margin: EdgeInsets.all(40),
-//                 decoration: BoxDecoration(
-//                   border: Border.all(color: Colors.black),
-//                   shape: BoxShape.rectangle,
-//                 ),
-//                 child: Text("Flutter1"),
-//                 // transform: Matrix4.rotationZ(1),
-//               ),
-//               Container(
-//                 alignment: Alignment.center,
-//                 height: 200,
-//                 width: 200,
-//                 // margin: EdgeInsets.all(40),
-//                 decoration: BoxDecoration(
-//                   border: Border.all(color: Colors.black),
-//                   shape: BoxShape.rectangle,
-//                 ),
-//                 child: Text("Flutter2"),
-//                 // transform: Matrix4.rotationZ(1),
-//               ),
-//               SingleChildScrollView(
-//                 scrollDirection: Axis.horizontal,
-//                 child: Row(
-//                   children: [
-//                     Container(
-//                       alignment: Alignment.center,
-//                       height: 200,
-//                       width: 200,
-//                       // margin: EdgeInsets.all(40),
-//                       decoration: BoxDecoration(
-//                         border: Border.all(color: Colors.black),
-//                         shape: BoxShape.rectangle,
-//                       ),
-//                       child: Text("Flutter2"),
-//                       // transform: Matrix4.rotationZ(1),
-//                     ),
-//                     Container(
-//                       alignment: Alignment.center,
-//                       height: 200,
-//                       width: 200,
-//                       // margin: EdgeInsets.all(40),
-//                       decoration: BoxDecoration(
-//                         border: Border.all(color: Colors.black),
-//                         shape: BoxShape.rectangle,
-//                       ),
-//                       child: Text("Flutter2"),
-//                       // transform: Matrix4.rotationZ(1),
-//                     ),
-//                     Container(
-//                       alignment: Alignment.center,
-//                       height: 200,
-//                       width: 200,
-//                       // margin: EdgeInsets.all(40),
-//                       decoration: BoxDecoration(
-//                         border: Border.all(color: Colors.black),
-//                         shape: BoxShape.rectangle,
-//                       ),
-//                       child: Text("Flutter2"),
-//                       // transform: Matrix4.rotationZ(1),
-//                     ),
-//                     Container(
-//                       alignment: Alignment.center,
-//                       height: 200,
-//                       width: 200,
-//                       // margin: EdgeInsets.all(40),
-//                       decoration: BoxDecoration(
-//                         border: Border.all(color: Colors.black),
-//                         shape: BoxShape.rectangle,
-//                       ),
-//                       child: Text("Flutter2"),
-//                       // transform: Matrix4.rotationZ(1),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               Container(
-//                 alignment: Alignment.center,
-//                 height: 200,
-//                 width: 200,
-//                 // margin: EdgeInsets.all(40),
-//                 decoration: BoxDecoration(
-//                   border: Border.all(color: Colors.black),
-//                   shape: BoxShape.rectangle,
-//                 ),
-//                 child: Text("Flutter2"),
-//                 // transform: Matrix4.rotationZ(1),
-//               ),
-//               Container(
-//                 alignment: Alignment.center,
-//                 height: 200,
-//                 width: 200,
-//                 // margin: EdgeInsets.all(40),
-//                 decoration: BoxDecoration(
-//                   border: Border.all(color: Colors.black),
-//                   shape: BoxShape.rectangle,
-//                 ),
-//                 child: Text("Flutter2"),
-//                 // transform: Matrix4.rotationZ(1),
-//               ),
-//             ],
-//           ),
-//         ));
-//   }
-// }
-
-
-
-
-
-
-
+        //علشان اعمل زر عائم
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add),
+          ),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Card(
+                child: Text("Flutter1"),
+                // transform: Matrix4.rotationZ(1),
+              ),
+              TextButton(onPressed: () {}, child: Text("data")),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      height: 200,
+                      width: 200,
+                      // margin: EdgeInsets.all(40),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Text("Flutter2"),
+                      // transform: Matrix4.rotationZ(1),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      height: 200,
+                      width: 200,
+                      // margin: EdgeInsets.all(40),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Text("Flutter2"),
+                      // transform: Matrix4.rotationZ(1),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      height: 200,
+                      width: 200,
+                      // margin: EdgeInsets.all(40),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Text("Flutter2"),
+                      // transform: Matrix4.rotationZ(1),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      height: 200,
+                      width: 200,
+                      // margin: EdgeInsets.all(40),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Text("Flutter2"),
+                      // transform: Matrix4.rotationZ(1),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                height: 200,
+                width: 200,
+                // margin: EdgeInsets.all(40),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  shape: BoxShape.rectangle,
+                ),
+                child: Text("Flutter2"),
+                // transform: Matrix4.rotationZ(1),
+              ),
+              Container(
+                alignment: Alignment.center,
+                height: 200,
+                width: 200,
+                // margin: EdgeInsets.all(40),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  shape: BoxShape.rectangle,
+                ),
+                child: Text("Flutter2"),
+                // transform: Matrix4.rotationZ(1),
+              ),
+            ],
+          ),
+        ));
+  }
+}
+*/
 
 /*
   Scaffold( 
@@ -567,6 +387,56 @@ class MyWidget extends StatelessWidget {
 
 */
 
+
+/*
+  لعمل متغير
+  var x,y;
+  DataType متغير ليس له قيمة ولا
+  ممكن تديله قيمة في اي سطر في الكود وممكن تغير نوعه عن طريق انك تغير البيانات اللي داخله في اي وقت
+  x = 1;
+  x = 'sss';
+
+
+  var x=0;
+  int x =0; كده هو كأنك كاتب
+  تقدر تغير قيمته لكن متقدر تغير نوعه
+  x = 1;
+  x = 'sss'; error
+
+  StatelssWidget لازم نحطه داخل Hot reload علشان لما نعدل على القيمة اللي داخل المتغير وتظهر اول ما نعمل
+  String علشان نستخدمه داخل
+  $x
+  ${x + y}
+
+  int, double, String, bool
+
+  
+*/
+
+
+/*
+  Functions and Libraries
+
+    import 'dart:math'; 
+      Random().nextInt(int); => بتديك رقم عشوائي من 0 لحد الرقم اللي انت كاتبه ناقص واحد
+
+*/
+
+
+/*
+  setState( () {
+              تاني علشان التغيير يظهر reload انها تعمل Fuction build لو انا هعمل حاجة هتغير حاجة داخل التطبيق بتاعي فلازم اقول لل
+          });
+*/
+
+
+/*
+  StatefullWidget و StatelessWidget الفرق بين
+  StatelessWidget => Widgetsبنكون ثابته مش بتتغير يعني مثلا الصور ثابته وباقي ال Widgetالحالة بتاعت الصفحة او التطبيق او البرنامج او ال
+  StatefullWidget => Widgetsبنكون بتتغير يعني مثلا الصور متغيرة وباقي ال Widgetالحالة بتاعت الصفحة او التطبيق او البرنامج او ال
+*/
+
+
 /*
 Text(→to show text  علشان نكتب كلام
       "data" => الكلام بيتكتب هنا
@@ -581,6 +451,7 @@ Text(→to show text  علشان نكتب كلام
 TextStyle(→to style the text	لتظبيط شكل الكلام
             backgroundColor → Colors. => بتاعها colorوتستخدم ال container في textاللون بتاع الخلفية والافضل انك تحط ال
             color → Colors. => لون الخط
+            color: Colors.blue[100] ==  color: Colors.blue.shade100
             decoration → TextDecoration. => لو عاوز تخلي مثلا خط على الكلام او تحته
             fontSize → double  => حجم الخط
             fontStyle → FontStyle. => شكل الخط عادي او مائل
@@ -597,6 +468,8 @@ TextStyle(→to style the text	لتظبيط شكل الكلام
 /*
   container طالما في حدود او لون خلفية يبقا
 Container(→is a container of other widgets	=> اخرى علشان لو عاوز تظبطها Widgets بتقدر تحط فيها
+            طالما مفيش حاجة داخلها ف هي بتستحوذ على كل الاماكن الفارغة اللي حولها
+            child فحجمها بيكون نفس حجم ال child واول ما نحط فيها
             child → Widget => اللي انت عاوز تظبطه Widgetهنا بتحط ال
             color → Colors. ♠ => واللي هو المفروض لون الخلفية containerلون ال
 
@@ -648,16 +521,58 @@ BoxDecoration(container لكى تتحكم أكثر فى الـ
 */
 
 /*
+card( => مربع له حواف دائرية شويه وله خفيف
+    Padding Widget علشان كده ممكن تحط الحاجات اللي جواها داخل padding properity ملهاش
+
+    child → Widget => اللي انت عاوز تظبطه Widgetهنا بتحط ال
+    ListTile() في العادة بتستخدم
+
+    color → Colors. ♠ => واللي هو المفروض لون الخلفية cardلون ال
+
+    margin → EdgeInsets. => containerمسافة خارج حدود بتاعت ال
+    margin: EdgeInsets.fromLTRB(left, top, right, bottom)
+    margin: EdgeInsets.all(مسافة من جميع الاتجاهات)
+    margin: EdgeInsets.symmetric(horizontal:مسافة من اليمين واليسار ,vertical:مسافة من فوق وتحت)
+    margin: EdgeInsets.only() => مسافة من اتجاه واحد فقط
+    margin: EdgeInsets.only(left : 22)
+    
+    معناها الصعود وعلشان نعمل ظل تحت حاجة لازم نصعد elevation
+    elevation → double
+
+    shape → ShapeBorder  => لتغيير شكل الحواف
+
+)
+*/
+
+
+/*
+لو عاوز تحط كلام وجنبه ايقونة
+ListTile( => leading || title (تحته) subTitle  || trailing
+        leading → Widget => بيتحط ناحية اليمين وفي العادة بيتحط هنا ايقونة
+        title → Widget => بيكون في المنتصف وفي العادة بيكون نص
+        subtitle → Widget => بيكون تحت النص اللي فوق وبيكون في العادة نص وبيكون لونه أخف شويه من اللي فوق
+        trailing → Widget => بيكون في الناحية اليسار
+)
+*/
+
+
+/*
   اللي عندنا لان اغلب الحاجات اللي انت هتعملها في اي  مشروع هيكونوا تحت بعض ف انت هتحطهم في هذا العامود Widgetsمن اهم ال
 Column(تُستخدم لترتيب الـ widgets رأسياً	
         حجم العامود افقيا يتحدد حسب حجم العناصر
+        حجم العامود رأسيا بيمتد لحد العنصر اللي اسفل منه
+        mainAxisSize: MainAxisSize.min, => لو عاوز يكون طوله او حجمه رأسيا نفس طول العناصر اللي داخله فقط
+
+        verticalDirection: VerticalDirection.up, => طريقة رص العناصر اول واحد بيكون فوق واللي بعده تحته
+        verticalDirection: VerticalDirection.down,  => طريقة رص العناصر اول واحد بيكون تحت واللي بعده فوقه
+
         children → List<Widget> => Widgetsاو مجموعةال list
 
         SingleChildScrollViewاحيانا مش بيشتغلوا كويس لما يتحطوا داخل ال
         mainAxisAlignment → MainAxisAlignment.  => Y للتحكم في طريقة رصف العناصر (داخل العمود) بشكل رأسي اي على المحور المحور الرئيسي محور
-        mainAxisAlignment: MainAxisAlignment.center  => يبدأ رصف او وضع العناصر داخل العامود من منتصفه رأسيا
-        mainAxisAlignment: MainAxisAlignment.end => (يبدأ رصف او وضع العناصر داخل العامود من أسفله (نهايته رأسيا
+        mainAxisAlignment: MainAxisAlignment.end => يبدأ رصف او وضع العناصر داخل العامود من أسفله (نهايته رأسيا) ولكن بيفضلوا على نفس ترتيبهم يعني الاول في واللي بعده تحته
         mainAxisAlignment: MainAxisAlignment.start  => (يبدأ رصف او وضع العناصر داخل العامود من أعلاه (بدايته رأسيا
+        mainAxisAlignment: MainAxisAlignment.center  => يبدأ رصف او وضع العناصر داخل العامود من منتصفه رأسيا ولكن بيفضلوا على نفس ترتيبهم يعني الاول في واللي بعده تحته
         mainAxisAlignment: MainAxisAlignment.spaceEvenly => وضع مسافات متساوية من بين العناصر ووضع نفس المسافة قبل اول عنصر وبعد اخر عنصر
         mainAxisAlignment: MainAxisAlignment.spaceBetween => وضع مسافات متساوية من بين العناصر ووضع نصف هذه المسافة قبل اول عنصر وبعد اخر عنصر
         mainAxisAlignment: MainAxisAlignment.spaceAround => وضع مسافات متساوية من بين العناصر وعدم وضع مسافة قبل اول عنصر وبعد اخر عنصر
@@ -728,7 +643,7 @@ MaterialApp(The main widget of flutter
 */
 
 /*
-Padding(لعمل مسافة خارج الـ widget	
+Padding( => Widget داخل هذه ال padding اللي معندهاش Widget ف بنحط المحتوي اللي جوه ال padding اللي اسمها properity معندهوش ال Widget لو في	
           child → Widget
           padding → EdgeInsets.
 */
@@ -754,8 +669,16 @@ Positioned(=>   ...بُعد العنصر بمقدار عن ال... بمقدار
             height → double
 */
 
+
 /*
-ElevatedButton(لإنشاء button	
+TextButton( لعمل زرار مفهوش اي تنسيقات
+            onPressed: () {}, 
+            child: Widget => ممكن نحط اي حاجة مش لازم نص 
+*/
+
+
+/*
+ElevatedButton(  => لعمل زرار له شكل تلقائي ومرتفع شويه عن الخلفية	
                 child → Widget => Text() بيكون Childفي العادة ال
                 onPressed → (){}
                 style → ButtonStyle( => لتظبيط التتنسيقات بتاعت الزرار
@@ -772,7 +695,6 @@ ElevatedButton(لإنشاء button
                   child: Text("click here", style: TextStyle(fontSize: 19),),
                 ),
 */
-
 
 /*
 ButtonStyle( => لتظبيط التتنسيقات بتاعت الزرار
@@ -857,7 +779,6 @@ TextField(لعمل حقل إدخال
           decoration: InputDecoration( => TextFieldللتحكم في التنسيقات الخاصة بال
 */
 
-
 /*
 InputDecoration(to style the TextField(	=> TextFieldللتحكم في التنسيقات الخاصة بال
                 hintText → String => علشان احط كلام داخل حقل الادخال ويختفي اول ما اكتب كلام داخله
@@ -884,8 +805,214 @@ Divider(لعمل خط فاصل
         thickness → double
 */
 
+/* 
+  البرنامج بتاعنا icon او ايقونة logo علشان اغير اللوجو
+  بنحدد الصورة اللي احنا عاوزينها
+  appico.co بنروح لموقع
+  ios و andriod بنرفع الصورة ونحدد على ال
+  ملفات الاندرويد نحددها ونحطها مكان الملفات اللي موجودة في البرنامج في فولدر
+  android\app\src\main\res
+  ملفات الايفون نحددها ونحطها مكان الملفات اللي موجودة في البرنامج في فولدر
+  ios\Runner\Assets.xcassets
+*/
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//أمثلة وتطبيق على الشرح
+//My ID Card Project
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(const MyIdCard());
+// }
+
+// class MyIdCard extends StatelessWidget {
+//   const MyIdCard({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: MyWidget(),
+//     );
+//   }
+// }
+
+// class MyWidget extends StatelessWidget {
+//   const MyWidget({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Colors.grey[800],
+//           centerTitle: true,
+//           title: Text(
+//             "My ID Card",
+//             style: TextStyle(
+//               color: Colors.grey[300],
+//             ),
+//           )),
+//           body:
+
+//           Container(
+//             color: Colors.grey[850],
+//             padding: EdgeInsets.only(top: 40),
+//             width: double.infinity,
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               children: [
+//                 CircleAvatar(
+//                   radius: 55,
+//                   backgroundImage: AssetImage("assets/imgs/bll.jpg"),
+//                 ),
+//                 SizedBox(height: 70,),
+//                 Container(
+//                   padding: EdgeInsets.only(left: 27),
+//                   height: 180,
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+//                     children: [
+//                       Text("Name",style: TextStyle(color: Colors.grey[500],fontSize: 20),),
+//                       Text("Bilal Abd Elnaseer Abd Elfattah",style: TextStyle(color: Colors.amberAccent,fontSize: 24,fontFamily: "RobotoCondensed"),),
+//                       SizedBox( height: 10, ),
+//                       Text("Level",style: TextStyle(color: Colors.grey[500],fontSize: 20),),
+//                       Text("Senior",style: TextStyle(color: Colors.amberAccent,fontSize: 24,fontFamily: "RobotoCondensed"),),
+//                       SizedBox( height: 10, ),
+//                       Row(
+//                         children: [
+//                           Icon(
+//                             color: Colors.grey[500],
+//                             Icons.email
+//                           ),
+//                           SizedBox( width: 10, ),
+//                           Text("Belal4278@gmail.com",style: TextStyle(color: Colors.grey,fontSize: 24,fontFamily: "RobotoCondensed"),),
+//                         ],
+//                       )
+//                     ],
+//                   ),
+//                 )
+
+//               ],
+//             ),
+//           ),
+//     );
+//   }
+// }
+
+//Login Screen
+
+//ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+// import 'package:flutter/material.dart';
+// void main() {
+//   runApp(const LoginScreen());
+// }
+
+// class LoginScreen extends StatelessWidget {
+//   const LoginScreen({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//       home: MyWidget(),
+//     );
+//   }
+// }
+// class MyWidget extends StatelessWidget {
+//   const MyWidget({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar:
+//         AppBar(title: Text("Login"),centerTitle: true,backgroundColor: Colors.purple),
+//       body:
+//         Container(
+//           width: double.infinity,
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Container(
+//                 padding: EdgeInsets.symmetric(horizontal: 4),
+//                 decoration:
+//                   BoxDecoration(
+//                     color: Colors.purple[200],
+//                     borderRadius: BorderRadius.circular(30)
+//                   ),
+//                 width: 266,
+//                 child:
+//                   TextField(
+//                     keyboardType: TextInputType.emailAddress,
+//                     textInputAction: TextInputAction.next,
+//                     decoration: InputDecoration(
+//                       border: InputBorder.none,
+//                       hintText: "Email :",
+//                       prefixIcon: Icon(Icons.person,color: Colors.purple[800],)
+//                     ),
+//                   ),
+//               ),
+//               Container(
+//                 padding: EdgeInsets.symmetric(horizontal: 4),
+//                 decoration:
+//                   BoxDecoration(
+//                     color: Colors.purple[200],
+//                     borderRadius: BorderRadius.circular(30)
+//                   ),
+//                 width: 266,
+//                 margin: EdgeInsets.symmetric(vertical: 22),
+//                 child:
+//                   TextField(
+//                   textInputAction: TextInputAction.done,
+//                     obscureText: true,
+//                     decoration: InputDecoration(
+//                       border: InputBorder.none,
+//                       hintText: "Password :",
+//                       prefixIcon: Icon(Icons.lock,color: Colors.purple[800],),
+//                       suffixIcon: Icon(Icons.visibility,color: Colors.purple[800],),
+//                     ),
+//                   ),
+//               ),
+//               Container(
+//                 width: 244,
+//                 child: ElevatedButton(
+//                   onPressed: (){},
+//                   style: ButtonStyle(
+//                     backgroundColor: MaterialStateProperty.all(Colors.purple[500]),
+//                     padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+//                     shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
+//                   ),
+//                   child: Text("Login", style: TextStyle(fontSize: 19),),
+//                 ),
+//               )
+//             ],
+//           ),
+//         ),
+//     );
+//   }
+// }
