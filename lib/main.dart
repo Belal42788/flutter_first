@@ -144,12 +144,19 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   @override
   var x = 0;
+  Card MyFunction() {
+    return Card(
+      child: Text("Flutter1"),
+      // transform: Matrix4.rotationZ(1),
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            x=Random().nextInt(10000);
+            x = Random().nextInt(10000);
           });
         },
         child: Text("$x"),
@@ -404,6 +411,8 @@ class MyWidget extends StatelessWidget {
   x = 'sss'; error
 
   StatelssWidget لازم نحطه داخل Hot reload علشان لما نعدل على القيمة اللي داخل المتغير وتظهر اول ما نعمل
+  buildومكانها بيكون خارج ال
+  
   String علشان نستخدمه داخل
   $x
   ${x + y}
@@ -416,9 +425,41 @@ class MyWidget extends StatelessWidget {
 
 /*
   Functions and Libraries
+  Function بتتكرر نحطها داخل Widget أي
 
-    import 'dart:math'; 
-      Random().nextInt(int); => بتديك رقم عشوائي من 0 لحد الرقم اللي انت كاتبه ناقص واحد
+  Random().nextInt(int); => بتديك رقم عشوائي من 0 لحد الرقم اللي انت كاتبه ناقص واحد
+
+  Widget ممكن ترجع Functions ال
+  Widget ويكون اول حرف فيه كبير لأنها Widgetsبتاعها نوع من انواع ال return type يعني ممكن نخلي ال
+  ; وفي الاخر نحط return ولازم نحط كلمة
+  اي حاجة بتاعها DataTypeبتاعتها ممكن يكون ال inputsال
+  Container MyFunction(Color myColor) مثلا لون
+
+  {} داخل functionوانت ممكن تنسى الترتيب بتاعهم فممكن تحطهم وانت بتعمل الinputsلو في عدد من ال
+  Container myFunction({Color myColor,int myInt,string mystring})
+  {} ولما تيجي تستخدمها لازم تكتب اسم المتغير وبعدها نقطتين فوق بعض وبعدها القيمة اللي انت عاوز تحطها بأي ترتيب وبدون
+  Container myFunction(myColor: Colors.black, mystring: 'hi', myInt: 22);
+
+  StatelssWidget لازم نحطه داخل Hot reload علشان لما نعدل على القيمة اللي داخل المتغير وتظهر اول ما نعمل
+  buildومكانها بيكون خارج ال
+
+
+  مثال
+  Container myFunction(Color myColor){
+    return Container(
+                alignment: Alignment.center,
+                height: 200,
+                width: 200,
+                // margin: EdgeInsets.all(40),
+                decoration: BoxDecoration(
+                  border: Border.all(color: myColor),
+                  shape: BoxShape.rectangle,
+                ),
+                child: Text("Flutter2"),
+                // transform: Matrix4.rotationZ(1),
+              );
+  }
+
 
 */
 
@@ -733,6 +774,17 @@ Image.asset(لإضافة صورة
 */
 
 /*
+            لتشغيل صوت	على البرنامج
+            play audio ابحث عن pub.dev ومن موقع Packageاول حاجة أثبت ال
+            اشوف انهي واحدة هي المناسبة ليا
+            Edit pubspec.yaml => dependencies  باحدث اصدار dependencyضيف هنا ال            "
+            audioplayers 5.1.0 مثال احنا اختارنا
+
+            داخل اي زرار inPressed داخل Functionاضيف ال
+            
+*/
+
+/*
 ClipRRect ( علشان اخلي الحواف دائرية
             child: Image.asset(اللي فوق widgetال)
             borderRadius: BorderRadius.circular(13)
@@ -760,9 +812,9 @@ CircleAvatar( علشان اخلي الصورة على شكل دائري
 
 /*
 SvgPicture.asset(  icons واللي هو بيكون  في العادة امتداد الايقونات svg علشان اضيف صورة بامتداد	
-                install flutter_svg  من الموقع هتعرف انهي احدث اصدار
+                flutter_svg ابحث عن pub.dev ومن موقع Packageاول حاجة أثبت ال
                 Edit pubspec.yaml => dependencies  باحدث اصدار dependencyضيف هنا ال
-                
+                import 'package:flutter_svg/flutter_svg.dart';
                 "اسم ومسار الصورة"
                 height:
                 width:
