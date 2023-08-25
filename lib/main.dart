@@ -1,4 +1,5 @@
 // ctrl + shift + P لانشاء مشروع جديد
+
 // الكود الاساسي لاي برنامج مكون من صفحة واحدة
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
@@ -420,6 +421,20 @@ class MyWidget extends StatelessWidget {
   int, double, String, bool
 
   
+*/
+
+
+/*
+  Data Structures
+
+  List<data type> name=[  ,  ,  , ];
+  List<Icon> answerResault=[Icon(Icons.thumb_down, color: Colors.red,) ,Icon(Icons.thumb_down, color: Colors.red,) ];
+  Functions in List
+    answerResault.isEmpty;
+    answerResault.length;
+    answerResault.first;
+    answerResault.last;
+
 */
 
 
